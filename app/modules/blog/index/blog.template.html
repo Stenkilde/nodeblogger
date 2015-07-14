@@ -1,0 +1,14 @@
+<form ng-submit="">
+    <label>
+        Write your blog here!<br>
+        <input type="text" placeholder="Header" ng-model="blog.header"/><br>
+    </label>
+    <input type="text" placeholder="Created by" ng-model="blog.createdBy"/><br>
+    <textarea name="" id="" cols="30" rows="10" placeholder="Body text" ng-model="blog.body"></textarea><br>
+</form>
+
+<div ng-repeat="blogs in blog.data">
+    {{ blogs.created_by }}<br>
+    {{ blogs.header }}
+    {{ blogs.body }}
+</div>
