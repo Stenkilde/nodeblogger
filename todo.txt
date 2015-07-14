@@ -1,0 +1,13 @@
+--- TODO ---
+
+1 - Login
+--- Make register API
+--- Make login API
+--- Make delete user API
+--- Make get user API
+--- Make get single user API
+--- Make PUT user API
+
+2 - Layout the blog
+
+3 - Design
