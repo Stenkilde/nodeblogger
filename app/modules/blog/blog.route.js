@@ -6,19 +6,27 @@
 		.config(function ($stateProvider) {
 
 			var Blog = {
-				name: 'blog',
+				name: 'application.blog',
 				url: '/blog',
-				templateUrl: 'modules/blog/index/blog.template.html',
-				controller: 'Blog',
-				controllerAs: 'blog'
+				views: {
+					'main@application': {
+						templateUrl: 'modules/blog/index/blog.template.html',
+						controller: 'Blog',
+						controllerAs: 'blog'
+					}
+				}
 			};
 
 			var Blogview = {
 				name: 'blogview',
 				url: '/blog/:id',
-				templateUrl: 'modules/blog/view/blogview.template.html',
-				controller: 'Blogview',
-				controllerAs: 'blogview'
+				views: {
+					'main@application': {
+						templateUrl : 'modules/blog/view/blogview.template.html',
+						controller  : 'Blogview',
+						controllerAs: 'blogview'
+					}
+				}
 			};
 
 			$stateProvider.state(Blog);

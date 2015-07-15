@@ -2,5 +2,9 @@
   "name": "blog",
   "version": "0.0.0",
   "description": "",
-  "main": "server.js"
+  "main": "server.js",
+  "devDependencies": {
+    "jsonwebtoken": "^5.0.2",
+    "express-jwt": "^3.0.1"
+  }
 }

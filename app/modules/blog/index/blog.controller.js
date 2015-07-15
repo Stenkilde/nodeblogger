@@ -6,7 +6,7 @@
 		.controller('Blog', Blog);
 
 	/* @ngInject */
-	function Blog(BlogFactory) {
+	function Blog(BlogFactory, $state, $stateParams) {
 		/*jshint validthis: true */
 		var vm 		= this;
 		vm.data		= {};
@@ -25,7 +25,14 @@
 				header: vm.header,
 				createdBy: vm.createBy,
 				body: vm.body
-			}).then(function(result) { console.log(result) });
+			}).then(function(result) {
+				console.log(result)
+				$state.transitionTo($state.current, $stateParams, {
+					reload: true,
+					inherit: false,
+					notify: true
+				});
+			});
 		}
 	}
 

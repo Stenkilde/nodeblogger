@@ -5,14 +5,20 @@
         <title></title>
     </head>
     <body>
-        <div ui-view=""></div>
+        <div ui-view="application"></div>
     </body>
 
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="config/config.js"></script>
+    <script src="modules/_application/application.route.js"></script>
     <script src="models/blog.factory.js"></script>
     <script src="modules/blog/blog.route.js"></script>
     <script src="modules/blog/index/blog.controller.js"></script>
     <script src="modules/blog/view/blogview.controller.js"></script>
+    <script src="models/user.factory.js"></script>
+    <script src="models/auth.factory.js"></script>
+    <script src="models/auth.interceptor.js"></script>
+    <script src="modules/shared/topbar/topbar.route.js"></script>
+    <script src="modules/shared/topbar/topbar.controller.js"></script>
 </html>

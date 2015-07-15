@@ -4,6 +4,15 @@ var mongoose	= require('mongoose');
 var bodyParser	= require('body-parser');
 var app			= express();
 var port 		= 1337;
+var jwt			= require('jsonwebtoken');
+var expressJwt	= require('express-jwt');
+
+var jwtSecret	= 'randomtoken1234';
+
+var user = {
+	username: 'stenkilde',
+	password: 'password'
+};
 
 mongoose.connect('mongodb://localhost/simple');
 
@@ -14,6 +23,16 @@ app.use(express.static(__dirname + '/app'));
 
 app.get('/', function(req, res) {
 	res.sendfile('./app/index.html');
+});
+
+app.post('/login', authenticate, function(req, res) {
+	var token =jwt.sign({
+		username: user.username
+	}, jwtSecret);
+	res.send({
+		token: token,
+		user: user
+	});
 });
 
 // Router setup
@@ -75,3 +94,16 @@ app.use('/api', router);
 // Start the server
 app.listen(port);
 console.log('We are up and running!');
+
+// Util functions
+
+function authenticate(req, res, next) {
+	var body = req.body;
+	if(!body.username || !body.password) {
+		res.status(400).end('Must provide a username & password');
+	}
+	if(body.username !== user.username || body.password !== user.password) {
+		res.status(401).end('Username or password is incorrect');
+	}
+	next();
+}

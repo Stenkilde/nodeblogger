@@ -1,0 +1,10 @@
+<form ng-submit="topbar.login(vm.username, vm.password)" ng-hide="topbar.user">
+    <div class="small-4 columns">
+        <input ng-model="topbar.username" placeholder="Username" type="text"/>
+    </div>
+    <div class="small-4 columns">
+        <input ng-model="topbar.password" placeholder="Password" type="password"/>
+    </div>
+    <button type="submit" class="button right">Login</button>
+</form>
+<button ng-hide="!topbar.user" ng-click="topbar.logout()" class="button right">Logout</button>

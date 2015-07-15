@@ -8,7 +8,7 @@
     <input type="submit" value="SUBMIT!"/>
 </form>
 
-<div ng-repeat="blogs in blog.data">
+<div ng-repeat="blogs in blog.data" ui-sref="blogview({id: blogs._id})">
     {{ blogs.created_by }}<br>
     {{ blogs.header }}
     {{ blogs.body }}
