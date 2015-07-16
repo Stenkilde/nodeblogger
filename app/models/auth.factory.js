@@ -7,28 +7,25 @@
 
 	/* @ngInject */
 	function AuthFactory($window) {
+		var store 		= $window.localStorage;
+		var key			= 'auth-token';
 
-		var service = {
+		return {
 			getToken: getToken,
 			setToken: setToken
 		};
-
-		var store 	= $window.localStorage;
-		var key		= 'auth-token';
 
 		function getToken() {
 			return store.getItem(key);
 		}
 
-		function setToken() {
+		function setToken(token) {
 			if(token) {
 				store.setItem(key, token);
 			} else {
 				store.removeItem(key);
 			}
 		}
-
-		return service;
 
 
 	}
