@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('blogster')
+		.module('porfolia')
 		.controller('Topbar', Topbar);
 
 	/* @ngInject */

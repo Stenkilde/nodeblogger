@@ -1,4 +1,4 @@
-var app = angular.module('blogster', ['ui.router']);
+var app = angular.module('porfolia', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 

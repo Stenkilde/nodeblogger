@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('blogster')
+		.module('porfolia')
 		.factory('AuthInterceptor', AuthInterceptor);
 
 	/* @ngInject */

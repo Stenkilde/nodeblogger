@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('blogster')
+	angular.module('porfolia')
 		/* @ngInject */
 		.config(function ($stateProvider) {
 

@@ -9,11 +9,6 @@ var expressJwt	= require('express-jwt');
 
 var jwtSecret	= 'randomtoken1234';
 
-var user = {
-	username: 'stenkilde',
-	password: 'password'
-};
-
 mongoose.connect('mongodb://localhost/simple');
 
 
@@ -27,7 +22,7 @@ app.get('/', function(req, res) {
 
 app.post('/login', authenticate, function(req, res) {
 	var token =jwt.sign({
-		username: user.username
+		username: req.body.username
 	}, jwtSecret);
 	res.send({
 		token: token,

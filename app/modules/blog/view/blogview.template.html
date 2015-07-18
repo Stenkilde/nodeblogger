@@ -1,1 +1,7 @@
-<h1>test</h1>
+<div class="row">
+    <div ng-repeat="blogs in blogview.data | limitTo:1">
+        {{ blogs.created_by }}<br>
+        {{ blogs.header }}
+        {{ blogs.body }}
+    </div>
+</div>
